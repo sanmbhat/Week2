@@ -6,8 +6,8 @@ var app = angular.module("ShoppingListCheckOff", [])
 	this.boughtItems = [];
 	this.buy = function(index) {
 		var item = this.toBuyItems[index];
-		this.toBuyItems.splice(index, 1);
 		this.boughtItems.push(item);
+		this.toBuyItems.splice(index, 1);
 	}
 });
 
