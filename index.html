@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>Coursera AngularJS Week2 Assignment</title>
+		<script src="app.js"></script>
+	</head>
+	<body ng-app="ShoppingListCheckOff">
+		<h1>Coursera AngularJS Week2 Assignment</h1>
+		<div ng-controller="ToBuyController">
+			<label ng-if="!buyList.length">Everything is bought!</label>
+			<ul ng-if="buyList.length">
+				<li ng-repeat="buyItem in buyList">
+					<label>Buy {{buyItem.quantity}} {{buyItem.name}}</label>
+					<button ng-click="BuyItem($index)">Bought</button>
+				</li>
+			</ul>
+		</div>
+		<div ng-controller="AlreadyBoughtController">
+			<label ng-if="!boughtList.length">Nothing bought yet</label>
+			<ul ng-if="boughtList.length">
+				<li ng-repeat="item in boughtList">
+					<label>Bought {{item.quantity}} {{item.name}}</label>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
